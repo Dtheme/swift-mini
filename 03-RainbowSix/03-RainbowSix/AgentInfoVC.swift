@@ -107,7 +107,6 @@ extension AgentInfoVC : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = Bundle.main.loadNibNamed("AgentInfoSectionHeader",
                                                   owner: self, options: nil)?.first as! AgentInfoSectionHeader
-//        headerView.didSelectSectionBtn.isSelected = isFoldFlags[section] as! Bool
         headerView.updateView(title: self.sectionTitle[section],isFold: isFoldFlags[section] as! Bool)
   
         headerView.didSelect = { [unowned self](sender)  in
@@ -117,7 +116,11 @@ extension AgentInfoVC : UITableViewDelegate,UITableViewDataSource{
             }else{
                 self.isFoldFlags[section] = false
             }
-            self.tableView.reloadSections(NSIndexSet.init(index: section) as IndexSet, with: .fade)
+
+
+            UIView.performWithoutAnimation {
+                self.tableView.reloadSections(NSIndexSet.init(index: section) as IndexSet, with: .none)
+            }
         }
         return headerView
         

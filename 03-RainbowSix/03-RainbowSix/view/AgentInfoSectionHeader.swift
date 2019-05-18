@@ -29,7 +29,6 @@ class AgentInfoSectionHeader: UIView {
     @IBAction func didSelectSection(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
         print("\(sender.isSelected)")
-//        self.updateImage()
         self.didSelect!(sender)
     }
     

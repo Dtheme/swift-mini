@@ -54,20 +54,11 @@ class AgentListVC: UIViewController {
     func loadData() {
         let path:String = Bundle.main.path(forResource: "Agents", ofType:"plist")!
         let data:Array<NSDictionary> = NSArray(contentsOfFile:path)! as! Array<NSDictionary>
-//        let dicArr = try! JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) as! [[String:AnyObject]]
-        //        将字典对象转化为字符串对象
+
         for dict in data {
             let A = Agent(name: dict["name"]! as! String, background: dict["background"]! as! String, psychological: dict["psychological"]! as! String, train: dict["train"]! as! String, experience: dict["experience"]! as! String)
             self.agentsData.add(A)
         }
-//        let jsonData:Data = jsonString.data(using: .utf8)!
-//
-//        let dict = try? JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers)
-//        if dict != nil {
-//            return dict as! NSDictionary
-//        }
-//        return NSDictionary()
-        
     }
 }
 
@@ -101,9 +92,8 @@ extension AgentListVC : UICollectionViewDelegate,UICollectionViewDataSource  {
 }
 
 extension AgentListVC : UINavigationControllerDelegate {
-    
-//    navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning?
 
+    
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
       
         if operation == UINavigationController.Operation.push {
