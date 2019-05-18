@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="SlideView" customModule="_4_VoiceMemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iux-dY-bGW" userLabel="indicatorView">
+                    <rect key="frame" x="187" y="8" width="40" height="5"/>
+                    <color key="backgroundColor" red="0.81733819799999996" green="0.81733819799999996" blue="0.81733819799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="L0W-iF-wqt"/>
+                        <constraint firstAttribute="height" constant="5" id="VW5-C8-j9K"/>
+                    </constraints>
+                </view>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="给声音一个名字吧" placeholder="给声音一个名字吧" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dAf-Vb-6pB">
+                    <rect key="frame" x="0.0" y="33" width="414" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="Xxb-bl-dBQ"/>
+                    </constraints>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019年05月18日23:13:19" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPm-Uq-9Bo">
+                    <rect key="frame" x="0.0" y="87" width="414" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="yPn-tW-LfJ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MMf-VJ-jHM" userLabel="volumView" customClass="SpectrumView" customModule="_4_VoiceMemo" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="129" width="414" height="80"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="ziw-5q-O8m"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aU3-fd-IRG" userLabel="recordButton" customClass="RecordButton" customModule="_4_VoiceMemo" customModuleProvider="target">
+                    <rect key="frame" x="167" y="290" width="80" height="80"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="aU3-fd-IRG" secondAttribute="height" multiplier="1:1" id="IHT-zG-4Yn"/>
+                        <constraint firstAttribute="width" constant="80" id="Lms-L8-7qs"/>
+                        <constraint firstAttribute="height" constant="80" id="em5-j6-9bd"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.19612058997154236" green="0.19650185108184814" blue="0.17148005962371826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="MMf-VJ-jHM" secondAttribute="trailing" id="5y4-57-qGB"/>
+                <constraint firstItem="aU3-fd-IRG" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="F0G-Z5-QI9"/>
+                <constraint firstItem="oPm-Uq-9Bo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="JCe-IU-pzK"/>
+                <constraint firstItem="MMf-VJ-jHM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="K21-Fr-J39"/>
+                <constraint firstAttribute="trailing" secondItem="oPm-Uq-9Bo" secondAttribute="trailing" id="P6c-Tf-8DD"/>
+                <constraint firstItem="dAf-Vb-6pB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="QtT-k3-6xp"/>
+                <constraint firstItem="dAf-Vb-6pB" firstAttribute="top" secondItem="Iux-dY-bGW" secondAttribute="bottom" constant="20" id="SQf-NQ-HpJ"/>
+                <constraint firstItem="oPm-Uq-9Bo" firstAttribute="top" secondItem="dAf-Vb-6pB" secondAttribute="bottom" constant="10" id="bWw-SI-nRx"/>
+                <constraint firstItem="Iux-dY-bGW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="eLF-Io-aTZ"/>
+                <constraint firstAttribute="bottom" secondItem="aU3-fd-IRG" secondAttribute="bottom" constant="30" id="qgp-xl-nj8"/>
+                <constraint firstItem="Iux-dY-bGW" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="tFM-Ul-uXn"/>
+                <constraint firstItem="MMf-VJ-jHM" firstAttribute="top" secondItem="oPm-Uq-9Bo" secondAttribute="bottom" constant="20" id="tSh-qm-Xau"/>
+                <constraint firstAttribute="trailing" secondItem="dAf-Vb-6pB" secondAttribute="trailing" id="wa3-Rb-zxj"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="indicatorView" destination="Iux-dY-bGW" id="wF0-Xf-uYx"/>
+                <outlet property="recordButton" destination="aU3-fd-IRG" id="aYy-eY-dLe"/>
+                <outlet property="timeLabel" destination="oPm-Uq-9Bo" id="kwb-uX-9nF"/>
+                <outlet property="titleTF" destination="dAf-Vb-6pB" id="XBM-nZ-3co"/>
+                <outlet property="volumView" destination="MMf-VJ-jHM" id="0bh-p2-2Pa"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="-36.830357142857139"/>
+        </view>
+    </objects>
+</document>
