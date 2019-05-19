@@ -16,26 +16,26 @@ class RecordListVC: UIViewController {
     var slider = SlideView()
     var tableView : UITableView?
     let cellId = "RecordListCell"
+    var selectedIndexPath : IndexPath? = IndexPath.init(item: 1000, section: 1000)
+    
     private var titleView = UILabel()
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //设置定位服务管理器代理
+        // 定位操作
         locationManager.delegate = self
-        //设置定位进度
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        //更新距离
         locationManager.distanceFilter = 100
-        ////发送授权申请
         locationManager.requestAlwaysAuthorization()
-        if (CLLocationManager.locationServicesEnabled())
-        {
-            //允许使用定位服务的话，开启定位服务更新
+        if (CLLocationManager.locationServicesEnabled()){
             locationManager.startUpdatingLocation()
             print("定位开始")
         }
+        
         self.configTableView()
         self.configSlide()
+        
+        self.tableView?.register(UINib.init(nibName: "RecordListCell", bundle: nil), forCellReuseIdentifier: cellId)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,9 +50,10 @@ class RecordListVC: UIViewController {
     }
     
     func configTableView() {
-        self.tableView = UITableView.init(frame: view.bounds, style: UITableView.Style.plain)
+        self.tableView = UITableView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height - 150), style: UITableView.Style.plain)
         self.tableView?.dataSource = self
         self.tableView?.delegate = self
+        self.tableView?.tableFooterView = UIView.init()
         view.addSubview(self.tableView!)
     }
     
@@ -79,15 +80,38 @@ extension RecordListVC : UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: cellId)
-        if cell == nil {
-            cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: cellId)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RecordListCell") as! RecordListCell
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
+        if selectedIndexPath == nil {
+            cell.foldState(foldState: .isflod)
+        }else{
+            if indexPath.elementsEqual(selectedIndexPath!) {
+                cell.foldState(foldState: .unfold)
+            }else{
+                cell.foldState(foldState: .isflod)
+            }
+            return cell
         }
-        cell?.selectionStyle = UITableViewCell.SelectionStyle.none
-        cell?.textLabel?.text = "2312"
-        return cell!
+        
+        return cell
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedIndexPath? = indexPath
+        self.tableView?.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard selectedIndexPath != nil else {
+            return 85
+        }
+        if indexPath.elementsEqual(selectedIndexPath!) {
+            return 190
+        }else{
+            return 85
+        }
+    }
+    
     //cell编辑状态
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
@@ -98,8 +122,10 @@ extension RecordListVC : UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        
+        // 删除操作
     }
+    
+    
     
 }
 
