@@ -62,19 +62,12 @@ class SlideView: UIView {
             self.recordButton.startButtonAnimation()
             if sender.isSelected {
                 //展开
-                self.animateSlider(targetPosition: self.mediumPosition) { (_) in
-                    self.currentSliderHeight = .medium
-                    self.updateSubviews()
-                }
+                self.animateSlider(targetPosition: self.mediumPosition) { (_) in}
                 
             }else{
                 
                 //收起
-                self.animateSlider(targetPosition: self.lowPosition) { (_) in
-                    self.currentSliderHeight = .low
-                    self.updateSubviews()
-                }
-                self.updateSubviews()
+                self.animateSlider(targetPosition: self.lowPosition) { (_) in }
             }
             self.layoutIfNeeded()
         }
@@ -100,18 +93,12 @@ class SlideView: UIView {
 
                 //                delegate?.animateTemperatureLabel(targetPosotion: mediumPosition, targetHeight: .medium)
 
-                animateSlider(targetPosition: mediumPosition) { (_) in
-                    self.currentSliderHeight = .medium
-                    self.updateSubviews()
-                }
+                animateSlider(targetPosition: mediumPosition) { (_) in }
             }
             
         } else if gesture.direction == .down {
             if currentSliderHeight == .medium {
-                animateSlider(targetPosition: lowPosition) { (_) in
-                    self.currentSliderHeight = .low
-                    self.updateSubviews()
-                }
+                animateSlider(targetPosition: lowPosition) { (_) in }
             }
         }
     }
@@ -120,6 +107,14 @@ class SlideView: UIView {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
             self.frame = CGRect.init(x: self.frame.origin.x, y: targetPosition, width: self.frame.size.width, height: UIScreen.main.bounds.size.height - targetPosition)
             self.layoutIfNeeded()
+            
+            if targetPosition == self.lowPosition{
+                self.currentSliderHeight = .low
+            }else{
+                self.currentSliderHeight = .medium
+            }
+
+            self.updateSubviews()
         }, completion: completion)
     }
     
