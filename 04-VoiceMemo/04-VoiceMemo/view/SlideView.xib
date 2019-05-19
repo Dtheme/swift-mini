@@ -25,6 +25,9 @@
                 </view>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="给声音一个名字吧" placeholder="给声音一个名字吧" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dAf-Vb-6pB">
                     <rect key="frame" x="0.0" y="33" width="414" height="44"/>
+                    <accessibility key="accessibilityConfiguration">
+                        <accessibilityTraits key="traits" notEnabled="YES"/>
+                    </accessibility>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="Xxb-bl-dBQ"/>
                     </constraints>

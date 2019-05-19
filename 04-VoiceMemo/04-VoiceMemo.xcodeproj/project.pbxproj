@@ -13,9 +13,11 @@
 		961BB01A228FB58300D5C9E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 961BB018228FB58300D5C9E5 /* LaunchScreen.storyboard */; };
 		961BB022228FB5A600D5C9E5 /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961BB021228FB5A600D5C9E5 /* RecordButton.swift */; };
 		961BB028228FD8AE00D5C9E5 /* SlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961BB027228FD8AE00D5C9E5 /* SlideView.swift */; };
-		961BB02A228FE2E100D5C9E5 /* Extention+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961BB029228FE2E100D5C9E5 /* Extention+UIView.swift */; };
 		961BB02C228FFDC800D5C9E5 /* SpectrumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961BB02B228FFDC800D5C9E5 /* SpectrumView.swift */; };
 		961BB0302290573600D5C9E5 /* SlideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961BB02F2290573600D5C9E5 /* SlideView.xib */; };
+		96B5E066229100DE000AD00B /* RecordUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B5E065229100DE000AD00B /* RecordUtil.swift */; };
+		96B5E06B22918149000AD00B /* RecordListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B5E06922918149000AD00B /* RecordListCell.swift */; };
+		96B5E06C22918149000AD00B /* RecordListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96B5E06A22918149000AD00B /* RecordListCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,9 +29,11 @@
 		961BB01B228FB58300D5C9E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		961BB021228FB5A600D5C9E5 /* RecordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
 		961BB027228FD8AE00D5C9E5 /* SlideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideView.swift; sourceTree = "<group>"; };
-		961BB029228FE2E100D5C9E5 /* Extention+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extention+UIView.swift"; sourceTree = "<group>"; };
 		961BB02B228FFDC800D5C9E5 /* SpectrumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpectrumView.swift; sourceTree = "<group>"; };
 		961BB02F2290573600D5C9E5 /* SlideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideView.xib; sourceTree = "<group>"; };
+		96B5E065229100DE000AD00B /* RecordUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordUtil.swift; sourceTree = "<group>"; };
+		96B5E06922918149000AD00B /* RecordListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordListCell.swift; sourceTree = "<group>"; };
+		96B5E06A22918149000AD00B /* RecordListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordListCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 				961BB011228FB58200D5C9E5 /* RecordListVC.swift */,
 				961BB026228FD84F00D5C9E5 /* model */,
 				961BB025228FD84F00D5C9E5 /* view */,
+				96B5E064229100CC000AD00B /* utils */,
 				961BB016228FB58300D5C9E5 /* Assets.xcassets */,
 				961BB018228FB58300D5C9E5 /* LaunchScreen.storyboard */,
 				961BB01B228FB58300D5C9E5 /* Info.plist */,
@@ -80,7 +85,8 @@
 				961BB02F2290573600D5C9E5 /* SlideView.xib */,
 				961BB021228FB5A600D5C9E5 /* RecordButton.swift */,
 				961BB02B228FFDC800D5C9E5 /* SpectrumView.swift */,
-				961BB029228FE2E100D5C9E5 /* Extention+UIView.swift */,
+				96B5E06922918149000AD00B /* RecordListCell.swift */,
+				96B5E06A22918149000AD00B /* RecordListCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -90,6 +96,14 @@
 			children = (
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		96B5E064229100CC000AD00B /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				96B5E065229100DE000AD00B /* RecordUtil.swift */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +166,7 @@
 			files = (
 				961BB0302290573600D5C9E5 /* SlideView.xib in Resources */,
 				961BB01A228FB58300D5C9E5 /* LaunchScreen.storyboard in Resources */,
+				96B5E06C22918149000AD00B /* RecordListCell.xib in Resources */,
 				961BB017228FB58300D5C9E5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,11 +178,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				961BB02A228FE2E100D5C9E5 /* Extention+UIView.swift in Sources */,
 				961BB012228FB58200D5C9E5 /* RecordListVC.swift in Sources */,
 				961BB010228FB58200D5C9E5 /* AppDelegate.swift in Sources */,
+				96B5E06B22918149000AD00B /* RecordListCell.swift in Sources */,
 				961BB028228FD8AE00D5C9E5 /* SlideView.swift in Sources */,
 				961BB02C228FFDC800D5C9E5 /* SpectrumView.swift in Sources */,
+				96B5E066229100DE000AD00B /* RecordUtil.swift in Sources */,
 				961BB022228FB5A600D5C9E5 /* RecordButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,12 +323,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 97KXK82D47;
 				INFOPLIST_FILE = "04-VoiceMemo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "dzw.-4-VoiceMemo";
+				PRODUCT_BUNDLE_IDENTIFIER = "dzw.--";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -324,12 +342,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 97KXK82D47;
 				INFOPLIST_FILE = "04-VoiceMemo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "dzw.-4-VoiceMemo";
+				PRODUCT_BUNDLE_IDENTIFIER = "dzw.--";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

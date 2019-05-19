@@ -7,9 +7,6 @@
 //
 
 
-//  最后整理一下代码
-
-
 import UIKit
 
 enum SliderHeight {
@@ -44,10 +41,13 @@ class SlideView: UIView {
         self.layer.masksToBounds = true
         self.backgroundColor = #colorLiteral(red: 0.1880786121, green: 0.1965952218, blue: 0.1674754918, alpha: 1)
         
+        indicatorView.layer.cornerRadius = 2.5
+        indicatorView.layer.masksToBounds = true
+        
         titleTF?.backgroundColor = #colorLiteral(red: 0.1880786121, green: 0.1965952218, blue: 0.1674754918, alpha: 1)
         titleTF?.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         titleTF?.textAlignment = NSTextAlignment.center
-        titleTF?.attributedPlaceholder = NSAttributedString.init(string:"给声音一个名字吧", attributes: [NSAttributedString.Key.foregroundColor:UIColor.white])
+        titleTF?.attributedPlaceholder = NSAttributedString.init(string:"", attributes: [NSAttributedString.Key.foregroundColor:UIColor.white])
         titleTF?.delegate = self
         titleTF?.font = UIFont.systemFont(ofSize: 24, weight: UIFont.Weight.medium)
 
