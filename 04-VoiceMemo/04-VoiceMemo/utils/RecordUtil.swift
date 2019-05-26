@@ -13,6 +13,7 @@ public class RecordUtil: NSObject {
     
     
     var audioPlayer: AVAudioPlayer!
+    var audioFileName: String = ""
     
     //Audio
     var audioRecorder: AVAudioRecorder!

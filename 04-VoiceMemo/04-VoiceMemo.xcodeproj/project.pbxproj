@@ -15,6 +15,7 @@
 		961BB028228FD8AE00D5C9E5 /* SlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961BB027228FD8AE00D5C9E5 /* SlideView.swift */; };
 		961BB02C228FFDC800D5C9E5 /* SpectrumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961BB02B228FFDC800D5C9E5 /* SpectrumView.swift */; };
 		961BB0302290573600D5C9E5 /* SlideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961BB02F2290573600D5C9E5 /* SlideView.xib */; };
+		9674578A229A54E900BA1EB8 /* RecordArchiveTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96745789229A54E900BA1EB8 /* RecordArchiveTool.swift */; };
 		96B5E066229100DE000AD00B /* RecordUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B5E065229100DE000AD00B /* RecordUtil.swift */; };
 		96B5E06B22918149000AD00B /* RecordListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B5E06922918149000AD00B /* RecordListCell.swift */; };
 		96B5E06C22918149000AD00B /* RecordListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96B5E06A22918149000AD00B /* RecordListCell.xib */; };
@@ -31,6 +32,7 @@
 		961BB027228FD8AE00D5C9E5 /* SlideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideView.swift; sourceTree = "<group>"; };
 		961BB02B228FFDC800D5C9E5 /* SpectrumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpectrumView.swift; sourceTree = "<group>"; };
 		961BB02F2290573600D5C9E5 /* SlideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideView.xib; sourceTree = "<group>"; };
+		96745789229A54E900BA1EB8 /* RecordArchiveTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordArchiveTool.swift; sourceTree = "<group>"; };
 		96B5E065229100DE000AD00B /* RecordUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordUtil.swift; sourceTree = "<group>"; };
 		96B5E06922918149000AD00B /* RecordListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordListCell.swift; sourceTree = "<group>"; };
 		96B5E06A22918149000AD00B /* RecordListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordListCell.xib; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 		961BB026228FD84F00D5C9E5 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				96745789229A54E900BA1EB8 /* RecordArchiveTool.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				961BB010228FB58200D5C9E5 /* AppDelegate.swift in Sources */,
 				96B5E06B22918149000AD00B /* RecordListCell.swift in Sources */,
 				961BB028228FD8AE00D5C9E5 /* SlideView.swift in Sources */,
+				9674578A229A54E900BA1EB8 /* RecordArchiveTool.swift in Sources */,
 				961BB02C228FFDC800D5C9E5 /* SpectrumView.swift in Sources */,
 				96B5E066229100DE000AD00B /* RecordUtil.swift in Sources */,
 				961BB022228FB5A600D5C9E5 /* RecordButton.swift in Sources */,

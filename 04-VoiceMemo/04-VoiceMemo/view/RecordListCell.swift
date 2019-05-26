@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 enum FoldState {
     case isflod
@@ -22,12 +23,14 @@ class RecordListCell: UITableViewCell {
     @IBOutlet weak var endTimeLabel: UILabel!
     
     @IBOutlet weak var back15Button: UIButton!
-    
     @IBOutlet weak var playButton: UIButton!
-    
     @IBOutlet weak var forward15Button: UIButton!
     
     var currentFoldState :FoldState = .unfold
+    var audioPath : String = ""
+    
+    var playAction : ((_ playUrl : String)->Void)?
+    var pauseAction : (()->Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -43,8 +46,14 @@ class RecordListCell: UITableViewCell {
     }
     
     
-    @IBAction func playAction(_ sender: Any) {
+    @IBAction func playAction(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
         print("playAction")
+        if sender.isSelected {
+            self.playAction!(self.audioPath )
+        }else{
+            self.pauseAction!()
+        }
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -72,4 +81,15 @@ class RecordListCell: UITableViewCell {
         }
     }
     
+    public func updateCell(audioInfo: NSDictionary){
+        self.timeLabel.text = (audioInfo["time"] as! String)
+        self.nameTextField.text = (audioInfo["name"] as! String)
+        self.audioPath = "\(audioInfo["url"] ?? "")"
+        
+        let audioAsset = AVURLAsset.init(url: URL.init(fileURLWithPath: self.audioPath) , options: nil)
+        let audioDuration = audioAsset.duration
+        let audioDurationSeconds = CMTimeGetSeconds(audioDuration)
+        self.durationLabel.text = String(audioDurationSeconds)
+        
+    }
 }

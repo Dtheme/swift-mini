@@ -30,6 +30,8 @@ class SlideView: UIView {
     
     @IBOutlet weak var recordButton: RecordButton!
     
+    var recordAction : (()->Void)?
+    var stopAction : (()->Void)?
     
     override func awakeFromNib() {
         configSubviews()
@@ -63,11 +65,11 @@ class SlideView: UIView {
             if sender.isSelected {
                 //展开
                 self.animateSlider(targetPosition: self.mediumPosition) { (_) in}
-                
+                self.recordAction!()
             }else{
-                
                 //收起
                 self.animateSlider(targetPosition: self.lowPosition) { (_) in }
+                self.stopAction!()
             }
             self.layoutIfNeeded()
         }
