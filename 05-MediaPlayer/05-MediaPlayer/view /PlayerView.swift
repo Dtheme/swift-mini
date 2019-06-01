@@ -1,9 +1,9 @@
 //
 //  PlayerView.swift
-//  AVPlayer
+//  05-MediaPlayer
 //
-//  Created by Tony on 2017/7/20.
-//  Copyright © 2016年 Tony. All rights reserved.
+//  Created by dzw on 2019/5/31.
+//  Copyright © 2019 dzw. All rights reserved.
 //
 
 import UIKit

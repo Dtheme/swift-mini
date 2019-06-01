@@ -41,7 +41,7 @@ class ViewController: UIViewController, PlayUtilDelegate {
         view.backgroundColor = UIColor.white
         
         // 添加视频播放器
-        playerManager = PlayUtil(playerFrame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 210), contentView: self.view)
+        playerManager = PlayUtil(playerFrame: CGRect(x: 0, y: 64, width: SCREEN_WIDTH, height: 210), contentView: self.view)
         view.addSubview(playerManager.playerView)
         
         // 添加视频切换按钮

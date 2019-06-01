@@ -49,6 +49,11 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RFT-oL-AeL">
+                    <rect key="frame" x="123" y="36.5" width="179" height="2"/>
+                    <color key="progressTintColor" red="0.21176470589999999" green="0.62745098040000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="trackTintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                </progressView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.11" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCK-32-N4V" userLabel="endLabel">
                     <rect key="frame" x="310" y="30" width="50" height="15"/>
                     <constraints>
@@ -59,9 +64,6 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RFT-oL-AeL">
-                    <rect key="frame" x="123" y="36.5" width="179" height="2"/>
-                </progressView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRc-Uh-8q8" userLabel="fullScreenButton">
                     <rect key="frame" x="365" y="27.5" width="20" height="20"/>
                     <constraints>
@@ -74,14 +76,32 @@
                         <action selector="fullScreenAction:" destination="fY0-zc-tNI" eventType="touchUpInside" id="USK-Zk-idV"/>
                     </connections>
                 </button>
-                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="EIL-VE-fNf">
-                    <rect key="frame" x="121" y="26.5" width="183" height="21"/>
+                <slider opaque="NO" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="EIL-VE-fNf">
+                    <rect key="frame" x="112" y="26.5" width="200" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="pUV-La-Qbf"/>
                     </constraints>
-                    <color key="minimumTrackTintColor" red="0.19791504739999999" green="0.4032380283" blue="0.83973360060000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <color key="maximumTrackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="thumbTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="minFillColor">
+                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="minStrokeColor">
+                            <color key="value" red="0.214392215" green="0.42000454659999997" blue="0.83550101519999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="maxFillColor">
+                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="maxStrokeColor">
+                            <color key="value" red="0.214392215" green="0.42000454659999997" blue="0.83550101519999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="thumbNormalFillColor">
+                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="thumbNormalStrokeColor">
+                            <color key="value" red="0.214392215" green="0.42000454659999997" blue="0.83550101519999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="slideIsDraging:" destination="fY0-zc-tNI" eventType="valueChanged" id="dn8-Hf-V9j"/>
                         <action selector="sliderEndDrag:" destination="fY0-zc-tNI" eventType="touchUpInside" id="4gr-ov-9Zl"/>
@@ -92,20 +112,20 @@
                 </slider>
             </subviews>
             <color key="backgroundColor" red="0.81733819799999996" green="0.81733819799999996" blue="0.81733819799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="EIL-VE-fNf" firstAttribute="centerY" secondItem="fY0-zc-tNI" secondAttribute="centerY" constant="-1" id="7yc-FZ-2J2"/>
-                <constraint firstItem="EIL-VE-fNf" firstAttribute="trailing" secondItem="PCK-32-N4V" secondAttribute="trailing" constant="-58" id="AzY-3T-RJg"/>
+                <constraint firstItem="RFT-oL-AeL" firstAttribute="centerY" secondItem="EIL-VE-fNf" secondAttribute="centerY" constant="1" id="92d-YB-ZQ0"/>
+                <constraint firstItem="EIL-VE-fNf" firstAttribute="trailing" secondItem="PCK-32-N4V" secondAttribute="trailing" constant="-50" id="AzY-3T-RJg"/>
                 <constraint firstItem="PCK-32-N4V" firstAttribute="centerY" secondItem="fY0-zc-tNI" secondAttribute="centerY" id="C01-tO-PL6"/>
                 <constraint firstItem="Wxu-kp-ufj" firstAttribute="leading" secondItem="fY0-zc-tNI" secondAttribute="leading" constant="10" id="FQ5-2d-QTZ"/>
-                <constraint firstItem="EIL-VE-fNf" firstAttribute="width" secondItem="RFT-oL-AeL" secondAttribute="height" multiplier="157:2" constant="22" id="FoA-2C-kU6"/>
+                <constraint firstItem="RFT-oL-AeL" firstAttribute="width" secondItem="EIL-VE-fNf" secondAttribute="width" constant="-17" id="JeO-72-AwK"/>
+                <constraint firstItem="RFT-oL-AeL" firstAttribute="leading" secondItem="EIL-VE-fNf" secondAttribute="leading" constant="9" id="KkI-I2-8gc"/>
                 <constraint firstItem="Sat-zc-ERM" firstAttribute="centerY" secondItem="fY0-zc-tNI" secondAttribute="centerY" id="OWI-Nu-gMv"/>
-                <constraint firstItem="RFT-oL-AeL" firstAttribute="centerY" secondItem="fY0-zc-tNI" secondAttribute="centerY" id="SZb-hw-wZU"/>
                 <constraint firstItem="fRc-Uh-8q8" firstAttribute="centerY" secondItem="fY0-zc-tNI" secondAttribute="centerY" id="Xag-39-Hjg"/>
-                <constraint firstItem="EIL-VE-fNf" firstAttribute="leading" secondItem="Sat-zc-ERM" secondAttribute="leading" constant="58" id="cET-JT-dLF"/>
-                <constraint firstItem="RFT-oL-AeL" firstAttribute="trailing" secondItem="PCK-32-N4V" secondAttribute="trailing" constant="-58" id="dC4-1O-d8v"/>
+                <constraint firstItem="EIL-VE-fNf" firstAttribute="leading" secondItem="Sat-zc-ERM" secondAttribute="leading" constant="49" id="cET-JT-dLF"/>
                 <constraint firstItem="H5A-2U-BtT" firstAttribute="leading" secondItem="Wxu-kp-ufj" secondAttribute="trailing" constant="10" id="fcS-9i-jtg"/>
                 <constraint firstItem="fRc-Uh-8q8" firstAttribute="leading" secondItem="PCK-32-N4V" secondAttribute="trailing" constant="5" id="fuS-La-K2u"/>
-                <constraint firstItem="RFT-oL-AeL" firstAttribute="leading" secondItem="Sat-zc-ERM" secondAttribute="leading" constant="58" id="hHA-Sv-PxD"/>
                 <constraint firstAttribute="trailing" secondItem="fRc-Uh-8q8" secondAttribute="trailing" constant="10" id="jcq-Qc-olm"/>
                 <constraint firstItem="Wxu-kp-ufj" firstAttribute="centerY" secondItem="fY0-zc-tNI" secondAttribute="centerY" id="jtY-mT-Mam"/>
                 <constraint firstItem="H5A-2U-BtT" firstAttribute="centerY" secondItem="fY0-zc-tNI" secondAttribute="centerY" id="q2x-M2-dhl"/>
