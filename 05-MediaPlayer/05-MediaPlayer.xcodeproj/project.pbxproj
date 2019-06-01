@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		964F260A22A267AB00A71089 /* _Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964F260922A267AB00A71089 /* _Slider.swift */; };
 		96F5019722A1536400850BA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F5019622A1536400850BA9 /* AppDelegate.swift */; };
 		96F5019922A1536400850BA9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F5019822A1536400850BA9 /* ViewController.swift */; };
 		96F5019C22A1536400850BA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96F5019A22A1536400850BA9 /* Main.storyboard */; };
@@ -22,7 +21,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		964F260922A267AB00A71089 /* _Slider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _Slider.swift; sourceTree = "<group>"; };
 		96F5019322A1536400850BA9 /* 05-MediaPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "05-MediaPlayer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96F5019622A1536400850BA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96F5019822A1536400850BA9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -94,7 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				96F501B022A15A5C00850BA9 /* PlayerView.swift */,
-				964F260922A267AB00A71089 /* _Slider.swift */,
 				96F501DF22A21CA100850BA9 /* ToolBarView.swift */,
 				96F501E122A21CB300850BA9 /* ToolBarView.xib */,
 			);
@@ -185,7 +182,6 @@
 				96F501B322A15A6700850BA9 /* PlayerManager.swift in Sources */,
 				96F501E022A21CA100850BA9 /* ToolBarView.swift in Sources */,
 				96F5019922A1536400850BA9 /* ViewController.swift in Sources */,
-				964F260A22A267AB00A71089 /* _Slider.swift in Sources */,
 				96F5019722A1536400850BA9 /* AppDelegate.swift in Sources */,
 				96F501AF22A1580000850BA9 /* Global.swift in Sources */,
 				96F501B122A15A5C00850BA9 /* PlayerView.swift in Sources */,

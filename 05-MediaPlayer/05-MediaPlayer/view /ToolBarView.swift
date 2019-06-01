@@ -48,12 +48,12 @@ class ToolBarView: UIView {
         progressView.progressTintColor = ProgressTintColor
 
         let image = UIImage(named: "round")
-        UIGraphicsBeginImageContext(CGSize.init(width: 15.0, height: 15.0));
-        image?.draw(in: CGRect.init(x: 0, y: 0, width: 15.0, height: 15.0))
+        UIGraphicsBeginImageContext(CGSize.init(width: 10.0, height: 10.0));
+        image?.draw(in: CGRect.init(x: 0, y: 0, width: 10.0, height: 10.0))
         let scaleImage=UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
-        progressSlider.setThumbImage(scaleImage, for: UIControl.State.normal)
-//        progressSlider.thumbRect(forBounds: CGRect.init(x: 0, y: 0, width: 0, height: 0), trackRect: progressSlider.bounds, value: progressSlider.value)
+        progressSlider.setThumbImage(scaleImage, for: .normal)
+        progressSlider.setThumbImage(scaleImage, for: .highlighted)
         
     }
     @IBAction func slideIsDraging(_ sender: UISlider) {
