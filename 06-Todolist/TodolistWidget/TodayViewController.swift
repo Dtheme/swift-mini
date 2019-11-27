@@ -55,7 +55,7 @@ extension TodayViewController: UITableViewDataSource,UITableViewDelegate{
                 let attributeString: NSMutableAttributedString = NSMutableAttributedString(string: previousStr, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 15.0)])
                 attributeString.addAttribute(NSAttributedString.Key.baselineOffset, value: 0, range: NSMakeRange(0, attributeString.length))
                 attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 1, range: NSMakeRange(0, attributeString.length))
-                attributeString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.gray, range: NSRange(location:0,length:attributeString.length))
+                attributeString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(red:0.50, green:0.79, blue:1.00, alpha:1.00), range: NSRange(location:0,length:attributeString.length))
                 cell.infoLabel.attributedText = attributeString
             }else{
                 let previousStr = String(cell.infoLabel.text!)
